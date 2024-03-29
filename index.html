@@ -183,22 +183,22 @@
 			};
 
 			/**
-				*  Remove root tag from html (helper taken from RichText code)
-				*  @link https://github.com/WordPress/gutenberg/blob/32a90263edaa9f6e6f0a9675722febeb2055143a/packages/block-editor/src/components/rich-text/native/index.native.js#L291
-				*/
+			*  Remove root tag from html (helper taken from RichText code)
+			*  @link https://github.com/WordPress/gutenberg/blob/32a90263edaa9f6e6f0a9675722febeb2055143a/packages/block-editor/src/components/rich-text/native/index.native.js#L291
+			*/
 			const removeRootTag = ( tag, html ) => {
-					const openingTagRegexp = RegExp( '^<' + tag + '[^>]*>', 'gim' );
-					const closingTagRegexp = RegExp( '</' + tag + '>$', 'gim' );
+				const openingTagRegexp = RegExp( '^<' + tag + '[^>]*>', 'gim' );
+				const closingTagRegexp = RegExp( '</' + tag + '>$', 'gim' );
 
-					return html
-						.replace( openingTagRegexp, '' )
-						.replace( closingTagRegexp, '' );
+				return html
+					.replace( openingTagRegexp, '' )
+					.replace( closingTagRegexp, '' );
 			}
 
 			/**
-				*  Remove specific tag from html (helper taken from RichText code)
-				*  @link https://github.com/WordPress/gutenberg/blob/32a90263edaa9f6e6f0a9675722febeb2055143a/packages/block-editor/src/components/rich-text/native/index.native.js#L300
-				*/
+			*  Remove specific tag from html (helper taken from RichText code)
+			*  @link https://github.com/WordPress/gutenberg/blob/32a90263edaa9f6e6f0a9675722febeb2055143a/packages/block-editor/src/components/rich-text/native/index.native.js#L300
+			*/
 			const removeTag = ( tag, html ) => {
 				const openingTagRegexp = RegExp( '<' + tag + '>', 'gim' );
 				const closingTagRegexp = RegExp( '</' + tag + '>', 'gim' );
