@@ -129,19 +129,19 @@
 			 */
 			const parseBlock = (block) => {
 
-                // Add support for RichText
-                const innerHTML = block?.innerHTML;
-                const innerBlocks = block?.innerBlocks;
-                let innerContentAttr = block.blockName === 'core/button' ? 'text' : 'content';
+				// Add support for RichText
+				const innerHTML = block?.innerHTML;
+				const innerBlocks = block?.innerBlocks;
+				let innerContentAttr = block.blockName === 'core/button' ? 'text' : 'content';
 
-                // Add content only if there is no innerBlocks & some innerHTML
-                if ( innerHTML && !innerBlocks?.length ) {
+				// Add content only if there is no innerBlocks & some innerHTML
+				if (innerHTML && !innerBlocks?.length) {
 
-                    // only innerText is needed
-                    const innerText = new DOMParser().parseFromString(innerHTML, "text/html").body.textContent || "";
-                    block.attrs[innerContentAttr] = innerText;
-                }
-                
+					// only innerText is needed
+					const innerText = new DOMParser().parseFromString(innerHTML, "text/html").body.textContent || "";
+					block.attrs[ innerContentAttr ] = innerText;
+				}
+
 				let data = `['${block.blockName}',${JSON.stringify(block.attrs, null, "")},[`;
 
 				block.innerBlocks?.forEach((innerBlock) => {
